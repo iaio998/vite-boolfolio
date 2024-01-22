@@ -1,15 +1,23 @@
 <template>
   <div class="container">
-    <div class="row">
+    <div class="row py-3 g-3">
       <div
-        class="col-4 col-md-4 col-lg-12"
+        class="col-4 col-md-4 col-lg-6 text-center"
         v-for="project in store.projects"
         :key="project.id"
       >
         <CardComponent
           :image="store.apiUrlImg + project.image"
           :title="project.title"
+          :url="project.url"
+          :slug:="project.slug"
         />
+        <button>
+          <router-link
+            :to="{ name: 'project', params: { slug: project.slug } }"
+            >{{ project.title }}</router-link
+          >
+        </button>
       </div>
     </div>
 
@@ -53,4 +61,20 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+button {
+  margin-top: 6px;
+  border-radius: 20px;
+  background-color: #212529;
+  transition: 0.6s;
+  &:hover a {
+    color: white;
+  }
+  &:hover {
+    background-color: green;
+  }
+  a {
+    color: white;
+  }
+}
+</style>

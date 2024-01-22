@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div class="text-center">
     <div class="img-cont">
       <img :src="image" :alt="title" />
     </div>
     <div class="card-txt">
-      <p>{{ title }}</p>
+      <p><strong>Project's name:</strong> {{ title }}</p>
+      <p><strong>Project's github url:</strong> {{ url }}</p>
     </div>
   </div>
 </template>
@@ -15,6 +16,8 @@ export default {
   props: {
     image: String,
     title: String,
+    url: String,
+    slug: String,
   },
   data() {
     return {};
@@ -26,10 +29,17 @@ export default {
 
 <style lang="scss" scoped>
 .img-cont {
-  width: 200px;
+  margin: 0 auto;
+  width: 250px;
   height: 150px;
+  overflow: hidden;
   img {
     width: 100%;
+    height: 100%;
   }
+}
+p {
+  margin: 0;
+  padding: 0;
 }
 </style>
