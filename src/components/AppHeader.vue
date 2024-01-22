@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li v-for="path in paths">
+      <li v-for="(path, index) in paths" :key="index">
         <router-link :to="{ name: path.name }">{{ path.label }}</router-link>
         <!-- <a :href="path.url">{{ path.label }}</a> -->
       </li>

@@ -1,8 +1,11 @@
 <template>
   <div>
     <ul>
-      <li v-for="project in projects" :key="project.id">
-        {{ project.title }}
+      <li v-for="project in store.projects" :key="project.id">
+        <router-link
+          :to="{ name: 'project', params: { slug: project.slug } }"
+          >{{ project.title }}</router-link
+        >
       </li>
     </ul>
   </div>
@@ -17,14 +20,13 @@ export default {
   data() {
     return {
       store,
-      projects: [],
     };
   },
   methods: {
     getApiTest() {
       axios.get(this.store.apiUrl + "projects").then((res) => {
         console.log(res.data);
-        this.projects = res.data;
+        this.store.projects = res.data;
       });
     },
   },
