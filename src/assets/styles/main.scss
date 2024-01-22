@@ -7,3 +7,10 @@ $fa-font-path: "../webfonts";
 @import "@fortawesome/fontawesome-free/scss/solid.scss";
 
 @import "bootstrap/scss/bootstrap";
+
+a{
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}

@@ -15,11 +15,16 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Projects</a>
+            <li
+              class="nav-item mx-2"
+              v-for="(path, index) in paths"
+              :key="index"
+              @click="index = index"
+              :class="{ active: index == index }"
+            >
+              <router-link active-class="my-active" :to="{ name: path.name }">{{
+                path.label
+              }}</router-link>
             </li>
           </ul>
           <form class="d-flex" role="search">
@@ -49,14 +54,15 @@ export default {
         {
           label: "Home",
           name: "home",
-          url: "/",
+          class: "active",
         },
         {
           label: "Projects",
           name: "projects",
-          url: "/projects",
+          class: "active",
         },
       ],
+      index: 0,
     };
   },
   methods: {},
@@ -65,6 +71,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.my-active {
+  color: green;
+  border-bottom: 2px solid green;
+}
 nav {
   color: white;
   .img-cont {
@@ -79,8 +89,11 @@ nav {
   a {
     color: white;
     font-size: 1.1em;
+    text-decoration: none;
+    transition: 0.5s;
     &:hover {
-      color: yellow;
+      color: grey;
+      transform: scale(1.2);
     }
   }
 }
