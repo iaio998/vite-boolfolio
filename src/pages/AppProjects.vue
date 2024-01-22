@@ -45,12 +45,13 @@ export default {
   data() {
     return {
       store,
+      currentPage: 1,
     };
   },
   methods: {
     getApiProjects() {
       axios.get(this.store.apiUrl + "projects").then((res) => {
-        console.log(res.data);
+        console.log(res.data.data);
         this.store.projects = res.data;
       });
     },
