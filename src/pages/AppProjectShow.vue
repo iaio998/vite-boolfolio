@@ -9,6 +9,11 @@
       <button>
         <router-link :to="{ name: 'projects' }">Go back</router-link>
       </button>
+      <button>
+        <router-link :to="{ name: 'project', params: { slug: 'boolflix' } }"
+          >Boolflix</router-link
+        >
+      </button>
     </div>
   </div>
 </template>
@@ -41,6 +46,12 @@ export default {
   },
   mounted() {
     this.getProjectData();
+    // this.$watch(() => this.$route.params, (toParams, previousParams) => {
+    // if(toParams !== previousParams){
+    // this.getProduct();
+    //      }
+    //   }
+    // )
   },
 };
 </script>
