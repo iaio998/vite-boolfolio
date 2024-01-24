@@ -3,23 +3,11 @@
     <form @submit.prevent="submitForm">
       <div class="mb-3">
         <label for="name" class="form-label">Nome</label>
-        <input
-          v-model="name"
-          type="text"
-          class="form-control"
-          id="name"
-          aria-describedby="emailHelp"
-        />
+        <input v-model="name" type="text" class="form-control" id="name" />
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input
-          v-model="email"
-          type="email"
-          class="form-control"
-          id="email"
-          aria-describedby="emailHelp"
-        />
+        <input v-model="email" type="email" class="form-control" id="email" />
         <div id="emailHelp" class="form-text">
           We'll never share your email with anyone else.
         </div>
