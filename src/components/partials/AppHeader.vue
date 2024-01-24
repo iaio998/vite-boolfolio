@@ -61,6 +61,11 @@ export default {
           name: "projects",
           class: "active",
         },
+        {
+          label: "Contacts",
+          name: "contacts",
+          class: "active",
+        },
       ],
       index: 0,
     };

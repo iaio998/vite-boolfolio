@@ -3,6 +3,7 @@ import AppHome from "../pages/AppHome.vue";
 import AppProjects from "../pages/AppProjects.vue";
 import AppProjectShow from "../pages/AppProjectShow.vue";
 import AppNotFound from "../pages/AppNotFound.vue";
+import AppContact from "../pages/AppContact.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: "/:pathMatch(.*)*",
       name: "not-found",
       component: AppNotFound,
+    },
+    {
+      path: "/contacts",
+      name: "contacts",
+      component: AppContact,
     },
     // {
     //   path: "/about",
